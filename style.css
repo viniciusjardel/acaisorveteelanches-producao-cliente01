@@ -1071,3 +1071,57 @@ select {
     font-size: 0.8rem;
   }
 }
+
+/* Ajustes adicionais para responsividade móvel (melhora UX em small screens) */
+@media (max-width: 600px) {
+  .header {
+    padding: 12px;
+  }
+
+  .header h1 { font-size: 1.2rem; }
+  .header p { font-size: 0.85rem; }
+
+  .menu { padding: 10px; }
+
+  .item img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .item button {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+  }
+
+  .category-tabs { padding: 6px 10px; gap: 6px; }
+
+  /* Transformar o carrinho em bottom-sheet no mobile */
+  .cart {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    max-height: 75vh;
+    transform: translateY(110%);
+    border-left: none;
+    border-top: 2px solid #5a189a;
+    box-shadow: 0 -8px 30px rgba(0,0,0,0.12);
+    padding: 12px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .cart.open { transform: translateY(0); }
+  .cart.hidden { transform: translateY(110%); pointer-events: none; }
+
+  .cart ul { max-height: calc(75vh - 180px); }
+
+  .cart-toggle-btn { right: 16px; bottom: 100px; }
+  .cart-top-btn { top: 10px; right: 10px; }
+
+  .modal-content { max-width: 95%; padding: 14px; }
+
+  .pastel-sabores, .pastel-acompanhamentos { max-height: 200px; }
+}
